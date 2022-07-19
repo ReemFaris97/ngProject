@@ -1,0 +1,57 @@
+<p>first-com works!</p>
+<section class="d-flex">
+  <div>
+    <ul *ngFor="let course of courses">
+      <li>{{ course }}</li>
+    </ul>
+  </div>
+  <div class="corsat">
+    <ul *ngFor="let course1 of coursat">
+      <li>{{ course1 }}</li>
+    </ul>
+  </div>
+</section>
+<!-- 01- (Interplation binding) -->
+<h1>Course : {{courseName}}</h1>
+<!----------------->
+<!-- 02- (Property binding=One Way Binding) -->
+<h1>Course : {{courseName}}</h1>
+<!-- <img src="{{imageURL}}"/> -->
+<!----------------->
+<!-- 09- (Class binding Event Binding Filter Events) -->
+<button type="button" class="btn btn-primary" [class.active]="isActive">Primary</button>
+<br>
+
+<button [style.backgroundColor]="isActive? 'yellow' : 'blue' ">New Button</button>
+<br>
+
+<button (click)="MethodName()">Save To DataBase</button>
+<br>
+
+<div (click)="divClicked()">
+  <button (click)="btnClicked($event)">
+    Save
+  </button>
+</div>
+<br>
+
+<input (keyup)="onKeyUp($event)" type="text" placeholder="with js">
+<br>
+
+<input (keyup.enter)="onKeyUpNew($event)" type="text" placeholder="with ng">
+<br>
+
+<input (keyup.enter)="onKeyUpVal($event)" type="text" placeholder="get val in var with ng">
+<div>{{ nameval }}</div>
+<br>
+
+<!-- Get input's val by Template Variable (# ) -->
+<input #firstName (keyup.enter)="onKeyUpTempVal(firstName.value)" type="text" placeholder="Get input's val by Template Variable">
+<div>{{ tempVal }}</div>
+<br>
+
+<!-- Get input's val by Banana-in-Boxing -->
+<!-- ngModel lazem a3arafha fe app.module.ts -->
+<!-- <input [(ngModel)]="newName" (keyup.enter)="onKeyUpBanana(newName)" type="text" placeholder="Get input's val by Banana-in-Boxing">
+<div>{{ newName }}</div> -->
+<br>
