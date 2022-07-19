@@ -1,57 +1,89 @@
 <p>first-com works!</p>
 <section class="d-flex">
   <div>
+    <h1>Interplation > A list</h1>
     <ul *ngFor="let course of courses">
       <li>{{ course }}</li>
     </ul>
   </div>
   <div class="corsat">
+    <h1>Call a service</h1>
     <ul *ngFor="let course1 of coursat">
       <li>{{ course1 }}</li>
     </ul>
   </div>
 </section>
-<!-- 01- (Interplation binding) -->
-<h1>Course : {{courseName}}</h1>
+<section class="d-flex">
+  <div>
+    <!-- 01- (Interplation binding) -->
+    <h1>01- (Interplation binding)</h1>
+    <p>Course : {{courseName}}</p>
+  </div>
+  <!----------------->
+  <div>
+    <!-- 02- (Property binding=One Way Binding) -->
+    <h1>02- (Property bindin=Attribute binding=One Way Binding)</h1>
+    <p [textContent]="courseName">textContent Property binding</p>
+    <img [src]="imageURL" />
+    <table>
+      <thead>
+        <tr>
+          <th [colSpan]="colSpan">cell1</th>
+          <th [attr.colspan]="colSpan">cell2</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+</section>
 <!----------------->
-<!-- 02- (Property binding=One Way Binding) -->
-<h1>Course : {{courseName}}</h1>
-<!-- <img src="{{imageURL}}"/> -->
-<!----------------->
-<!-- 09- (Class binding Event Binding Filter Events) -->
-<button type="button" class="btn btn-primary" [class.active]="isActive">Primary</button>
-<br>
-
-<button [style.backgroundColor]="isActive? 'yellow' : 'blue' ">New Button</button>
-<br>
-
-<button (click)="MethodName()">Save To DataBase</button>
-<br>
-
-<div (click)="divClicked()">
-  <button (click)="btnClicked($event)">
-    Save
-  </button>
+<!-- 03- (Class binding Filter Events) -->
+<div>
+  <h1>03- (Class binding Filter Events)</h1>
+  <section class="d-flex">
+    <div>
+      <button type="button" class="btn btn-primary" [class.active]="isActive">Primary</button>
+    </div>
+    <div>
+      <button [style.backgroundColor]="isActive? 'yellow' : 'blue' ">New Button</button>
+    </div>
+  </section>
 </div>
-<br>
+<!-- 04- (Event Binding Filter Events) -->
+<div>
+  <h1>04- (Event Binding Filter Events)</h1>
+  <section class="d-flex">
+    <div>
+      <button (click)="MethodName()">Save To DataBase</button>
+    </div>
+    <!-- $event For all details ---->
+    <div (click)="divClicked()">
+      <button (click)="btnClicked($event)">
+        Save
+      </button>
+    </div>
+    <div>
+      <input (keyup)="onKeyUp($event)" type="text" placeholder="with js">
+    </div>
+    <div>
+      <!--- Event Filter --->
+      <input (keyup.enter)="onKeyUpNew($event)" type="text" placeholder="with ng">
+    </div>
+    <div>
+      <!--- get val in var with JS --->
+      <input (keyup.enter)="onKeyUpVal($event)" type="text" placeholder="get val in var with JS">
+      <div>{{ nameval }}</div>
+    </div>
+    <div>
+      <!-- Get input's val by Template Variable (# ) -->
+      <input #firstName (keyup.enter)="onKeyUpTempVal(firstName.value)" type="text"
+        placeholder="Get input's val by Template Variable">
+      <div>{{ tempVal }}</div>
+    </div>
 
-<input (keyup)="onKeyUp($event)" type="text" placeholder="with js">
-<br>
-
-<input (keyup.enter)="onKeyUpNew($event)" type="text" placeholder="with ng">
-<br>
-
-<input (keyup.enter)="onKeyUpVal($event)" type="text" placeholder="get val in var with ng">
-<div>{{ nameval }}</div>
-<br>
-
-<!-- Get input's val by Template Variable (# ) -->
-<input #firstName (keyup.enter)="onKeyUpTempVal(firstName.value)" type="text" placeholder="Get input's val by Template Variable">
-<div>{{ tempVal }}</div>
-<br>
+  </section>
+</div>
 
 <!-- Get input's val by Banana-in-Boxing -->
 <!-- ngModel lazem a3arafha fe app.module.ts -->
 <!-- <input [(ngModel)]="newName" (keyup.enter)="onKeyUpBanana(newName)" type="text" placeholder="Get input's val by Banana-in-Boxing">
 <div>{{ newName }}</div> -->
-<br>
