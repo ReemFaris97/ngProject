@@ -84,7 +84,28 @@
   </section>
 </div>
 
-<!-- Get input's val by Banana-in-Boxing -->
-<!-- ngModel lazem a3arafha fe app.module.ts -->
-<!-- <input [(ngModel)]="newName" (keyup.enter)="onKeyUpBanana(newName)" type="text" placeholder="Get input's val by Banana-in-Boxing">
-<div>{{ newName }}</div> -->
+<div class="corsat">
+  <h1>Call a service</h1>
+  <ul *ngFor="let course1 of coursat">
+    <li>{{ course1 }}</li>
+  </ul>
+</div>
+
+<!-- 05- (Two Way Binding) -->
+
+<div>
+  <h1>05- (Two Way Binding)</h1>
+<section class="d-flex">
+  <div>
+    <h1>(1) Old way طريقة مرهقة</h1>
+      <input (keyup.enter)="oldName=$any($event.target).value;onKeyUpTwoWayBind(oldName)" />
+      <p> {{oldName}} </p>
+  </div>
+  <!-- Get input's val by Banana-in-Boxing -->
+  <!-- ngModel lazem a3arafha fe app.module.ts -->
+  <div>
+    <input [(ngModel)]="newName" (keyup.enter)="onKeyUpBanana(newName)" type="text" placeholder="Get input's val by Banana-in-Boxing">
+  <p>{{ newName }}</p>
+  </div>
+</section>
+</div>

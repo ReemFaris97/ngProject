@@ -61,8 +61,16 @@ colSpan=3;
     this.tempVal=firstName;
   }
 
-  //Get input's val by Banana-in-Boxing
-  onKeyUpBanana(){
+////05- (Two Way Binding)
+// /(1) Old way طريقة مرهقة
+oldName:any[] = []; //// <<< this resolves errors
+onKeyUpTwoWayBind(oldName:any){
+  console.log(oldName);
+}
+  //(2) Get input's val by Banana-in-Boxing
+  newName:any[] = []; //// <<< this resolves errors 
+  onKeyUpBanana(newName:any){
+    console.log(newName);
   }
   //////db Service
   // db = new DbService(); // wrong way
