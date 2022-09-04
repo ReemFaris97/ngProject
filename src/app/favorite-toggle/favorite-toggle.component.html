@@ -1,0 +1,7 @@
+<h1>Like & Dislike Button</h1>
+<span 
+[class.fa-solid]="isFavorite"
+[class.fa-regular]="!isFavorite"
+ class="fa-heart"
+ (click)="onFavClick()"
+ ></span>
