@@ -1,2 +1,30 @@
 <app-first-com></app-first-com>
 <app-favorite-toggle></app-favorite-toggle>
+
+
+<!-- 05- (Two Way Binding) --> 
+<div>
+    <h1>06- (Pipes & custom pipes)</h1>
+    <section class="d-flex">
+      <div>
+        <h2>Pipes</h2>
+
+        <p>  
+          {{ employee.fullName | uppercase }}
+        </p>
+        <p>
+            {{ employee.salary | currency:'usd' }} 
+        </p>
+        <p>
+            {{ employee.hiringDate| date:'shortDate' }} 
+        </p>
+      </div>
+      <div>
+        <h2>Custom Pipes</h2>
+        <p>first 5 letters pipe : (summary)</p>
+            <p>
+                 {{longTitle | summary:5 }}
+            </p>
+      </div>
+    </section>
+  </div>

@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComComponent } from './first-com/first-com.component';
 import { FavoriteToggleComponent } from './favorite-toggle/favorite-toggle.component';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComComponent,
-    FavoriteToggleComponent
+    FavoriteToggleComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,

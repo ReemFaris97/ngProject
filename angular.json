@@ -18,6 +18,7 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "defaultConfiguration": "production",
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/ngProject",
@@ -37,6 +38,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -72,10 +81,13 @@
             "browserTarget": "ngProject:build"
           },
           "configurations": {
-            "production": {
+            "development": {
               "browserTarget": "ngProject:build:production"
             }
-          }
+          },
+          "development": {
+            "browserTarget": "{{ngProject}}:build:development"
+           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
